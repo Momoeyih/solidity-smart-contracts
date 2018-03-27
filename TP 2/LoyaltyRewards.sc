@@ -54,4 +54,13 @@ contract Rewards is EIP20Interface {
     }
     event Transfer(address indexed _from, address indexed _to, uint256 _value); 
     event Approval(address indexed _owner, address indexed _spender, uint256 _value);
+
+   //Fonction KILL
+   function kill() isowner()
+       {
+           delete totalPoints;
+           delete soldes;
+           delete allowed;
+           selfdestruct(msg.sender);
+       }
 }
